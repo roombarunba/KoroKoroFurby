@@ -13,9 +13,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var timer: Timer!
     
     var charactor: CharactorClass = CharactorClass();
-    var ashiba: AshibaClass = AshibaClass();
+    var ashiba1: AshibaClass = AshibaClass();
     
     @IBOutlet var  longPressGesture:UILongPressGestureRecognizer!;
+    
+    var ashibaArray: Array<AshibaClass> = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         charactor.initCharactor();
-        ashiba.initAshiba();
+        ashiba1.initAshiba();
+        
+        ashibaArray.append(ashiba1);
         
         // 画像サイズ
         let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
@@ -37,8 +41,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // view に追加する
         self.view.addSubview(charactor.imageView);
         
-        ashiba.ashibaView.center = CGPoint(x: screenWidth/2, y: 4*screenHeight/5)
-        self.view.addSubview(ashiba.ashibaView);
+        for ashiba in ashibaArray{
+            ashiba.ashibaView.center = CGPoint(x: screenWidth/2, y: 4*screenHeight/5)
+            self.view.addSubview(ashiba.ashibaView);
+        }
         
         // ロングプレスを定義
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPressView(sender:)))  //Swift3
@@ -86,39 +92,68 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         
-        if( // 足場より上にいる判定
-            charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
-            > ashiba.ashibaView.center.y - ashiba.heightHalf + 15
+
+        
+        for ashiba in ashibaArray{
+            print("----------")
             
-            &&
-            
-            // 足場の上端付近にいる判定
-            charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
-            - ashiba.ashibaView.center.y - ashiba.heightHalf < 5
-            
-            &&
-            
-            // 足場より右側にいる判定
-            charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
-            > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
-            
-            &&
-            
-            // 足場より左側にいる判定
-            charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
-            < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+            print(charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
+                < ashiba.ashibaView.center.y - ashiba.heightHalf + 15)
+            print(                        (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 5
+                
+                ||
+                
+                (ashiba.ashibaView.center.y - ashiba.heightHalf) -
+                (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) > 5)
+            print(charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
+                > ashiba.ashibaView.center.x - ashiba.widthHalf + 2)
+            print(charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
+                < ashiba.ashibaView.center.x + ashiba.widthHalf - 2)
+            print(charactor.vy >= 0)
             
             
-            &&
+            print("----------")
             
-            // 落下中判定
-            charactor.vy >= 0
             
-            ){
+            print("　　　　　　")
+            print(charactor.imageView.center.y)
+            print(charactor.imageHeightHalf)
+            print(charactor.vy)
+            print(ashiba.ashibaView.center.y)
+            print(ashiba.heightHalf)
             
-            charactor.vy = -15;
-            charactor.hoppedCount = 0;
             
+            if( // 足場の上部周辺にいる判定
+                    (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) <= 35
+                
+                    &&
+                        
+                    (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 15
+                
+                    &&
+                
+                    // 足場より右側にいる判定
+                    charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
+                    > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
+                    
+                    &&
+                    
+                    // 足場より左側にいる判定
+                    charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
+                    < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+                    
+                    
+                    &&
+                    
+                    // 落下中判定
+                    charactor.vy >= 0
+                
+                ){
+                
+                charactor.vy = -15;
+                charactor.hoppedCount = 0;
+                
+            }
         }
         
         charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
