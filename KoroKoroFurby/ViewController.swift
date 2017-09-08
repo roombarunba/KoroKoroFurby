@@ -12,32 +12,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var timer: Timer!
     
-    var number: Int = 0;
-    
-    var imageView:UIImageView!
-    let image1 = UIImage(named:"151-free-pictogram.png")!
-    
-    @IBOutlet var tapGesture:UITapGestureRecognizer!;
+    var charactor: CharactorClass = CharactorClass();
+    var ashiba: AshibaClass = AshibaClass();
     
     @IBOutlet var  longPressGesture:UILongPressGestureRecognizer!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Do any additional setup after loading the view, typically from a nib.
         
+        charactor.initCharactor();
+        ashiba.initAshiba();
+        
         // 画像サイズ
-        let rect = CGRect(x:0, y:0, width:image1.size.width/5, height:image1.size.height/5)
+        let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
         // UIImageView のインスタンス生成,ダミーでimage1を指定
-        imageView = UIImageView(image:image1);
-        imageView.frame = rect
+        charactor.imageView.frame = rect;
         // 画像が画面中央にくるように位置合わせ
         let screenWidth = self.view.bounds.width
         let screenHeight = self.view.bounds.height
-        imageView.center = CGPoint(x:screenWidth/2, y:screenHeight/2)
+        charactor.imageView.center = CGPoint(x:screenWidth/2, y:screenHeight/2)
         // view に追加する
-        self.view.addSubview(imageView)
+        self.view.addSubview(charactor.imageView);
         
+        ashiba.ashibaView.center = CGPoint(x: screenWidth/2, y: 4*screenHeight/5)
+        self.view.addSubview(ashiba.ashibaView);
         
         // ロングプレスを定義
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPressView(sender:)))  //Swift3
@@ -59,32 +60,69 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         timer.invalidate()
     }
     
-    var vy: Double = 0;
-    var gravity: Double = 1.2;
-    var hoppedCount: Int = 10;
+    var gravity: CGFloat = 1.2;
     let noGravity: Int = 7;
-    let vy_limit: Double = 15;
+    let vy_limit: CGFloat = 15;
     
-    var vx: Double = 0;
     
     func update(tm: Timer) {
-        if((imageView.center.y + (image1.size.height/10)) > self.view.bounds.height){
-            vy = -15;
-            hoppedCount = 0;
-        }else if(vy < vy_limit && hoppedCount >= noGravity){
-            vy += gravity;
+        if((charactor.imageView.center.y + charactor.imageHeightHalf) > self.view.bounds.height){
+            charactor.vy = -15;
+            charactor.hoppedCount = 0;
+        }else if(charactor.vy < vy_limit && charactor.hoppedCount >= noGravity){
+            charactor.vy += gravity;
         }
         
-        hoppedCount += 1;
+        charactor.hoppedCount += 1;
         
-        if(imageView.center.x + CGFloat(vx) < CGFloat(-1*(image1.size.height/20)) && vx < 0){
-            imageView.center.x = self.view.bounds.width + image1.size.height/20;
-        }else if(imageView.center.x + CGFloat(vx) > CGFloat(self.view.bounds.width + image1.size.height/20)
-            && vx > 0){
-            imageView.center.x = -1*(image1.size.height/20);
+        // 画面端移動判定
+        if(charactor.imageView.center.x + charactor.vx
+            < CGFloat(-1*(charactor.imageWidthHalf/2)) && charactor.vx < 0){
+            charactor.imageView.center.x = self.view.bounds.width + charactor.imageWidth/2;
+        }else if(charactor.imageView.center.x + charactor.vx
+            > CGFloat(self.view.bounds.width + charactor.imageWidthHalf/2)
+            && charactor.vx > 0){
+            charactor.imageView.center.x = -1*(charactor.imageHeightHalf/2);
         }
         
-        imageView.center = CGPoint(x: imageView.center.x + CGFloat(vx), y: imageView.center.y + CGFloat(vy));
+        
+        if( // 足場より上にいる判定
+            charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
+            > ashiba.ashibaView.center.y - ashiba.heightHalf + 15
+            
+            &&
+            
+            // 足場の上端付近にいる判定
+            charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
+            - ashiba.ashibaView.center.y - ashiba.heightHalf < 5
+            
+            &&
+            
+            // 足場より右側にいる判定
+            charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
+            > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
+            
+            &&
+            
+            // 足場より左側にいる判定
+            charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
+            < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+            
+            
+            &&
+            
+            // 落下中判定
+            charactor.vy >= 0
+            
+            ){
+            
+            charactor.vy = -15;
+            charactor.hoppedCount = 0;
+            
+        }
+        
+        charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
+            , y: charactor.imageView.center.y + charactor.vy);
     }
     
     // ロングプレス時に実行される
@@ -92,12 +130,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let x:Int = Int(longPressGesture.location(in: nil).x)
         
         if(x < Int(self.view.bounds.width/2)){
-            if(vx > -5){
-                vx += -0.3;
+            if(charactor.vx > -5){
+                charactor.vx += -0.3;
             }
         }else{
-            if(vx < 5){
-                vx += 0.3;
+            if(charactor.vx < 5){
+                charactor.vx += 0.3;
             }
         }
     }
