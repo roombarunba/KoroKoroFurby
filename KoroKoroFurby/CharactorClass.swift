@@ -23,6 +23,10 @@ class CharactorClass: NSObject {
     var imageHeightHalf: CGFloat = 0;
     var hoppedCount: Int = 10;
     
+    var merikomanai:CGFloat = 0;
+    
+    var jumpBool: Bool = false;
+    
     func initCharactor(){
         imageView = UIImageView(image:charactor);
         

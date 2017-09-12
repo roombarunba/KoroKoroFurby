@@ -14,6 +14,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var charactor: CharactorClass = CharactorClass();
     var ashiba1: AshibaClass = AshibaClass();
+    var ashiba2: AshibaClass = AshibaClass();
+    var ashiba3: AshibaClass = AshibaClass();
+    var ashiba4: AshibaClass = AshibaClass();
+    var ashiba5: AshibaClass = AshibaClass();
     
     @IBOutlet var  longPressGesture:UILongPressGestureRecognizer!;
     
@@ -26,9 +30,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         charactor.initCharactor();
-        ashiba1.initAshiba();
         
         ashibaArray.append(ashiba1);
+        
+        ashibaArray.append(ashiba2);
+        
+        ashibaArray.append(ashiba3);
+        
+        ashibaArray.append(ashiba4);
+        
+        ashibaArray.append(ashiba5);
         
         // 画像サイズ
         let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
@@ -41,8 +52,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // view に追加する
         self.view.addSubview(charactor.imageView);
         
+        var bCx:CGFloat = -10000;
+        var bCy:CGFloat = -10000;
+        
         for ashiba in ashibaArray{
-            ashiba.ashibaView.center = CGPoint(x: screenWidth/2, y: 4*screenHeight/5)
+            ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: screenWidth);
+            ashiba.ashibaView.center = CGPoint(x: ashiba.initCx, y: ashiba.initCy)
+            bCx = ashiba.initCx;
+            bCy = ashiba.initCy;
             self.view.addSubview(ashiba.ashibaView);
         }
         
