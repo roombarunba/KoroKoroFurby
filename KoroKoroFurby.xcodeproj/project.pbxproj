@@ -14,6 +14,7 @@
 		AB389B7A1F4D518400B74119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB389B791F4D518400B74119 /* Assets.xcassets */; };
 		AB389B7D1F4D518400B74119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB389B7B1F4D518400B74119 /* LaunchScreen.storyboard */; };
 		AB389B861F4D5A1C00B74119 /* ashiba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB389B851F4D5A1C00B74119 /* ashiba.jpg */; };
+		AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5315621F71081E007EB184 /* ResultViewController.swift */; };
 		AB65EDE41F62932D00137CE9 /* 151-free-pictogramiro.png in Resources */ = {isa = PBXBuildFile; fileRef = AB65EDE31F62932D00137CE9 /* 151-free-pictogramiro.png */; };
 		AB65EDE81F62A23700137CE9 /* CharactorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE71F62A23700137CE9 /* CharactorClass.swift */; };
 		AB65EDEA1F62A56B00137CE9 /* AshibaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */; };
@@ -36,6 +37,7 @@
 		AB389B7C1F4D518400B74119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB389B7E1F4D518400B74119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB389B851F4D5A1C00B74119 /* ashiba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ashiba.jpg; sourceTree = "<group>"; };
+		AB5315621F71081E007EB184 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		AB65EDE31F62932D00137CE9 /* 151-free-pictogramiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "151-free-pictogramiro.png"; sourceTree = "<group>"; };
 		AB65EDE71F62A23700137CE9 /* CharactorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactorClass.swift; sourceTree = "<group>"; };
 		AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -94,6 +96,7 @@
 				AB69AF371F67E87D007C4F1F /* AshibaClass5.swift */,
 				AB69AF391F67E911007C4F1F /* AshibaMatome.swift */,
 				AB69AF3B1F67FA20007C4F1F /* AshibaClassCCC.swift */,
+				AB5315621F71081E007EB184 /* ResultViewController.swift */,
 			);
 			path = KoroKoroFurby;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */,
 				AB69AF3C1F67FA20007C4F1F /* AshibaClassCCC.swift in Sources */,
 				AB69AF361F67E877007C4F1F /* AshibaClass4.swift in Sources */,
+				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

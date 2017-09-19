@@ -31,13 +31,54 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var bCx:CGFloat = -10000;
     var bCy:CGFloat = -10000;
     
+    var gravity: CGFloat = 1.2;
+    let noGravity: Int = 7;
+    let vy_limit: CGFloat = 15;
+    
+    var ground: Bool = true;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        // ロングプレスを定義
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPressView(sender:)))  //Swift3
+        
+        longPressGesture.minimumPressDuration = 0  //3秒間以上押された場合にロングプレスとする
+        longPressGesture.allowableMovement = 30  //ロングプレスを判定する指が動いていい範囲、単位はpx
+        
+        self.view.addGestureRecognizer(longPressGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        initGame();
+        timer = Timer.scheduledTimer(timeInterval: 0.017, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        timer.fire()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        timer.invalidate()
+    }
+    
+    func initGame(){
+        charactor = CharactorClass();
         charactor.initCharactor();
+        
+        ashiba1 = AshibaClass();
+        ashiba2 = AshibaClass();
+        ashiba3 = AshibaClass();
+        ashiba4 = AshibaClass();
+        ashiba5 = AshibaClass();
+        ashiba6 = AshibaClass();
+        ashiba7 = AshibaClass();
+        ashiba8 = AshibaClass();
+        ashiba9 = AshibaClass();
+        ashiba10 = AshibaClass();
         
         ashibaArray.append(ashiba1);
         ashibaArray.append(ashiba2);
@@ -49,6 +90,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         ashibaArray.append(ashiba8);
         ashibaArray.append(ashiba9);
         ashibaArray.append(ashiba10);
+        
+        ground = true;
+        
+        bCx = -10000;
+        bCy = -10000;
         
         // 画像サイズ
         let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
@@ -69,37 +115,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             bCy = ashiba.initCy;
             self.view.addSubview(ashiba.ashibaView);
         }
-        
-        // ロングプレスを定義
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPressView(sender:)))  //Swift3
-        
-        longPressGesture.minimumPressDuration = 0  //3秒間以上押された場合にロングプレスとする
-        longPressGesture.allowableMovement = 30  //ロングプレスを判定する指が動いていい範囲、単位はpx
-        
-        self.view.addGestureRecognizer(longPressGesture)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        timer = Timer.scheduledTimer(timeInterval: 0.017, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        timer.fire()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        timer.invalidate()
-    }
-    
-    var gravity: CGFloat = 1.2;
-    let noGravity: Int = 7;
-    let vy_limit: CGFloat = 15;
-    
     
     func update(tm: Timer) {
-        if((charactor.imageView.center.y + charactor.imageHeightHalf) > self.view.bounds.height){
-            charactor.vy = -15;
-            charactor.hoppedCount = 0;
-        }else if(charactor.vy < vy_limit && charactor.hoppedCount >= noGravity){
+        // 地面からジャンプ
+        if(ground){
+            if((charactor.imageView.center.y + charactor.imageHeightHalf) > self.view.bounds.height){
+                charactor.vy = -15;
+                charactor.hoppedCount = 0;
+            }
+        }
+        
+        // 重力追加
+        if(charactor.vy < vy_limit && charactor.hoppedCount >= noGravity){
             charactor.vy += gravity;
         }
         
@@ -153,6 +181,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         if(charactor.imageView.center.y + charactor.vy < view.self.bounds.height/3){
+            ground = false;
             charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
                 , y: charactor.imageView.center.y);
             for ashiba in ashibaArray{
@@ -179,6 +208,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
                 , y: charactor.imageView.center.y + charactor.vy);
         }
+        
+        // ゲームオーバー判定
+        if(charactor.imageView.center.y > self.view.bounds.height + (2*charactor.imageHeight)){
+            // 画面遷移
+            self.performSegue(withIdentifier: "toResult", sender: nil);
+        }
+        
     }
     
     // ロングプレス時に実行される
