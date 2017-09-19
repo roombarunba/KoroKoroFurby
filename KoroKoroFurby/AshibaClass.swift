@@ -41,7 +41,7 @@ class AshibaClass {
             let rR = screenWidth - (2*widthHalf);
             let random = arc4random_uniform(UInt32(rR));
             initCx = CGFloat(random) + widthHalf;
-            initCy = 533.6;
+            initCy = 833.6;
         }
     }
     

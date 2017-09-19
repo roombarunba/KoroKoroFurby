@@ -18,10 +18,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var ashiba3: AshibaClass = AshibaClass();
     var ashiba4: AshibaClass = AshibaClass();
     var ashiba5: AshibaClass = AshibaClass();
+    var ashiba6: AshibaClass = AshibaClass();
+    var ashiba7: AshibaClass = AshibaClass();
+    var ashiba8: AshibaClass = AshibaClass();
+    var ashiba9: AshibaClass = AshibaClass();
+    var ashiba10: AshibaClass = AshibaClass();
     
     @IBOutlet var  longPressGesture:UILongPressGestureRecognizer!;
     
     var ashibaArray: Array<AshibaClass> = [];
+    
+    var bCx:CGFloat = -10000;
+    var bCy:CGFloat = -10000;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +40,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         charactor.initCharactor();
         
         ashibaArray.append(ashiba1);
-        
         ashibaArray.append(ashiba2);
-        
         ashibaArray.append(ashiba3);
-        
         ashibaArray.append(ashiba4);
-        
         ashibaArray.append(ashiba5);
+        ashibaArray.append(ashiba6);
+        ashibaArray.append(ashiba7);
+        ashibaArray.append(ashiba8);
+        ashibaArray.append(ashiba9);
+        ashibaArray.append(ashiba10);
         
         // 画像サイズ
         let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
@@ -48,12 +57,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         // 画像が画面中央にくるように位置合わせ
         let screenWidth = self.view.bounds.width
         let screenHeight = self.view.bounds.height
-        charactor.imageView.center = CGPoint(x:screenWidth/2, y:screenHeight/2)
+        charactor.imageView.center = CGPoint(x:screenWidth/2, y:screenHeight - charactor.imageHeightHalf);
+        
         // view に追加する
         self.view.addSubview(charactor.imageView);
-        
-        var bCx:CGFloat = -10000;
-        var bCy:CGFloat = -10000;
         
         for ashiba in ashibaArray{
             ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: screenWidth);
@@ -112,34 +119,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         
         for ashiba in ashibaArray{
-            print("----------")
-            
-            print(charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy
-                < ashiba.ashibaView.center.y - ashiba.heightHalf + 15)
-            print(                        (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 5
-                
-                ||
-                
-                (ashiba.ashibaView.center.y - ashiba.heightHalf) -
-                (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) > 5)
-            print(charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
-                > ashiba.ashibaView.center.x - ashiba.widthHalf + 2)
-            print(charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
-                < ashiba.ashibaView.center.x + ashiba.widthHalf - 2)
-            print(charactor.vy >= 0)
-            
-            
-            print("----------")
-            
-            
-            print("　　　　　　")
-            print(charactor.imageView.center.y)
-            print(charactor.imageHeightHalf)
-            print(charactor.vy)
-            print(ashiba.ashibaView.center.y)
-            print(ashiba.heightHalf)
-            
-            
             if( // 足場の上部周辺にいる判定
                     (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) <= 35
                 
@@ -173,8 +152,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
         
-        charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
-            , y: charactor.imageView.center.y + charactor.vy);
+        if(charactor.imageView.center.y + charactor.vy < view.self.bounds.height/3){
+            charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
+                , y: charactor.imageView.center.y);
+            for ashiba in ashibaArray{
+                ashiba.initCx = ashiba.ashibaView.center.x;
+                ashiba.initCy = ashiba.ashibaView.center.y;
+                ashiba.ashibaView.center = CGPoint(x: ashiba.ashibaView.center.x,
+                                                   y: ashiba.ashibaView.center.y - charactor.vy)
+                if(ashiba.ashibaView.center.y > self.view.bounds.height + (2*ashiba.heightHalf)){
+                    ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: view.self.bounds.width);
+                    
+                    print(ashiba.initCx);
+                    print(ashiba.initCy);
+                    
+//                    bCx = ashiba.initCx;
+//                    bCy = ashiba.initCy - charactor.vy;
+                    
+                    ashiba.ashibaView.center = CGPoint(x: ashiba.initCx, y: ashiba.initCy);
+                    print(ashibaArray.count);
+                }
+                bCx = ashiba.ashibaView.center.x;
+                bCy = ashiba.ashibaView.center.y;
+            }
+        }else{
+            charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
+                , y: charactor.imageView.center.y + charactor.vy);
+        }
     }
     
     // ロングプレス時に実行される
