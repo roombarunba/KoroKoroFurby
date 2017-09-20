@@ -9,11 +9,16 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    var score: Int64 = 0;
+    
+    @IBOutlet var scoreLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        scoreLabel.text = "score : " + String(score);
     }
 
     override func didReceiveMemoryWarning() {

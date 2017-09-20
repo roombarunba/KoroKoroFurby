@@ -250,6 +250,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultViewController = segue.destination as! ResultViewController;
+        resultViewController.score = score;
+    }
 
     
     
