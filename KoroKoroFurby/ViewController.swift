@@ -109,7 +109,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addSubview(charactor.imageView);
         
         for ashiba in ashibaArray{
-            ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: screenWidth);
+            ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: screenWidth, screenHeight: screenHeight);
             ashiba.ashibaView.center = CGPoint(x: ashiba.initCx, y: ashiba.initCy)
             bCx = ashiba.initCx;
             bCy = ashiba.initCy;
@@ -190,7 +190,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 ashiba.ashibaView.center = CGPoint(x: ashiba.ashibaView.center.x,
                                                    y: ashiba.ashibaView.center.y - charactor.vy)
                 if(ashiba.ashibaView.center.y > self.view.bounds.height + (2*ashiba.heightHalf)){
-                    ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: view.self.bounds.width);
+                    ashiba.makeAshiba(beforeCx: bCx, beforeCy: bCy, screenWidth: view.self.bounds.width, screenHeight: view.self.bounds.height);
                     
                     print(ashiba.initCx);
                     print(ashiba.initCy);

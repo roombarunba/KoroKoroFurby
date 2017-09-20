@@ -25,7 +25,7 @@ class AshibaClass {
         heightHalf = ashiba.size.height/CGFloat(2);
     }
     
-    func makeAshiba(beforeCx:CGFloat, beforeCy:CGFloat, screenWidth:CGFloat){
+    func makeAshiba(beforeCx:CGFloat, beforeCy:CGFloat, screenWidth:CGFloat, screenHeight:CGFloat){
         if(beforeCx != -10000){
             let randomX = Int(arc4random_uniform(300)) - 150;
             let randomY = Int(arc4random_uniform(50)) + 100;
@@ -41,7 +41,7 @@ class AshibaClass {
             let rR = screenWidth - (2*widthHalf);
             let random = arc4random_uniform(UInt32(rR));
             initCx = CGFloat(random) + widthHalf;
-            initCy = 833.6;
+            initCy = screenHeight - 100;
         }
     }
     
