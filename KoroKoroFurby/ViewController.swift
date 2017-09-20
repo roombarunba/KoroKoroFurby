@@ -37,6 +37,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var ground: Bool = true;
     
+    var score: Int64 = 0;
+    var maxHeight: Int64 = 0;
+    
+    @IBOutlet var scoreLabel: UILabel!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +71,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func initGame(){
+        score = 0;
+        maxHeight = Int64(self.view.bounds.height);
+        
         charactor = CharactorClass();
         charactor.initCharactor();
         
@@ -115,6 +123,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             bCy = ashiba.initCy;
             self.view.addSubview(ashiba.ashibaView);
         }
+        
+        self.view.bringSubview(toFront: scoreLabel)
     }
     
     func update(tm: Timer) {
@@ -182,6 +192,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         if(charactor.imageView.center.y + charactor.vy < view.self.bounds.height/3){
             ground = false;
+            score = score + Int64(-1 * charactor.vy);
             charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
                 , y: charactor.imageView.center.y);
             for ashiba in ashibaArray{
@@ -208,6 +219,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             charactor.imageView.center = CGPoint(x: charactor.imageView.center.x + charactor.vx
                 , y: charactor.imageView.center.y + charactor.vy);
         }
+        
+        // 初期位置からのスコア計算
+        if(score < Int64(2*self.view.bounds.height/3) && maxHeight > Int64(charactor.imageView.center.y)){
+            score = score + Int64(-1 * charactor.vy);
+            maxHeight = Int64(charactor.imageView.center.y);
+        }
+        
+        scoreLabel.text = "score : " + String(score);
         
         // ゲームオーバー判定
         if(charactor.imageView.center.y > self.view.bounds.height + (2*charactor.imageHeight)){
