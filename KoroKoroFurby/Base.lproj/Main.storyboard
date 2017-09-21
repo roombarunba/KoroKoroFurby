@@ -12,7 +12,7 @@
         <!--Title View Controller-->
         <scene sceneID="T45-32-PbA">
             <objects>
-                <viewController id="gKP-68-ZCu" customClass="TitleViewController" customModule="KoroKoroFurby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gKP-68-ZCu" customClass="TitleViewController" customModule="KoroKoroFurby" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5T2-w7-Vzt"/>
                         <viewControllerLayoutGuide type="bottom" id="NXj-da-dWU"/>
@@ -31,21 +31,47 @@
                                 </state>
                                 <connections>
                                     <action selector="start" destination="gKP-68-ZCu" eventType="touchUpInside" id="hFL-sr-WwT"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toGame" modalTransitionStyle="crossDissolve" id="epM-YK-OK3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-3l-WxI">
+                                <rect key="frame" x="120" y="585" width="135" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="scoreReset" destination="gKP-68-ZCu" eventType="touchUpInside" id="prd-pg-xpM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8G-Xo-C7f">
+                                <rect key="frame" x="64" y="414" width="246" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="start" destination="gKP-68-ZCu" eventType="touchUpInside" id="5Fr-3R-wcM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toGame" modalTransitionStyle="crossDissolve" id="rcO-vX-klp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5l-ds-Ffd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758" y="36"/>
+            <point key="canvasLocation" x="-759.20000000000005" y="35.532233883058474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KoroKoroFurby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KoroKoroFurby" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -84,7 +110,7 @@
         <!--Result View Controller-->
         <scene sceneID="mMf-fs-98I">
             <objects>
-                <viewController id="a9s-5N-CEG" customClass="ResultViewController" customModule="KoroKoroFurby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a9s-5N-CEG" customClass="ResultViewController" customModule="KoroKoroFurby" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hmj-ec-Yng"/>
                         <viewControllerLayoutGuide type="bottom" id="Ze0-NY-t7h"/>

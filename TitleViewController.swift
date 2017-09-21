@@ -27,6 +27,12 @@ class TitleViewController: UIViewController {
         self.performSegue(withIdentifier: "toGame", sender: nil);
     }
     
+    @IBAction func scoreReset(){
+        let ud = UserDefaults.standard;
+        ud.set("0", forKey: "highScore");
+        ud.synchronize();
+    }
+    
 
     /*
     // MARK: - Navigation

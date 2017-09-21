@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB04128F1F5FE4B3003F2E7E /* 151-free-pictogram.png in Resources */ = {isa = PBXBuildFile; fileRef = AB04128E1F5FE4B3003F2E7E /* 151-free-pictogram.png */; };
 		AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B721F4D518400B74119 /* AppDelegate.swift */; };
-		AB389B751F4D518400B74119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 		AB389B781F4D518400B74119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB389B761F4D518400B74119 /* Main.storyboard */; };
 		AB389B7A1F4D518400B74119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB389B791F4D518400B74119 /* Assets.xcassets */; };
 		AB389B7D1F4D518400B74119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB389B7B1F4D518400B74119 /* LaunchScreen.storyboard */; };
@@ -26,6 +25,7 @@
 		AB69AF381F67E87D007C4F1F /* AshibaClass5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF371F67E87D007C4F1F /* AshibaClass5.swift */; };
 		AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF391F67E911007C4F1F /* AshibaMatome.swift */; };
 		AB69AF3C1F67FA20007C4F1F /* AshibaClassCCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF3B1F67FA20007C4F1F /* AshibaClassCCC.swift */; };
+		ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,11 +193,11 @@
 				AB65EDE81F62A23700137CE9 /* CharactorClass.swift in Sources */,
 				AB69AF341F67E873007C4F1F /* AshibaClass3.swift in Sources */,
 				AB69AF301F67D7DA007C4F1F /* AshibaClass2.swift in Sources */,
-				AB389B751F4D518400B74119 /* ViewController.swift in Sources */,
 				AB65EDEA1F62A56B00137CE9 /* AshibaClass.swift in Sources */,
 				AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */,
 				AB69AF381F67E87D007C4F1F /* AshibaClass5.swift in Sources */,
 				AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */,
+				ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */,
 				AB69AF3C1F67FA20007C4F1F /* AshibaClassCCC.swift in Sources */,
 				AB69AF361F67E877007C4F1F /* AshibaClass4.swift in Sources */,
 				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,
