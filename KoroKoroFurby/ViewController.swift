@@ -42,6 +42,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var scoreLabel: UILabel!;
     
+    var highScore: Int64 = 0;
+    @IBOutlet var highScoreLabel: UILabel!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +75,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func initGame(){
         score = 0;
+        
+        let ud = UserDefaults.standard;
+        if(ud.string(forKey: "highScore") != nil){
+            highScore = Int64(ud.string(forKey: "highScore")!)!;
+        }else{
+            highScore = 0;
+        }
+        highScoreLabel.text = "HighScore : " + String(highScore);
+        
         maxHeight = Int64(self.view.bounds.height);
         
         charactor = CharactorClass();
@@ -125,6 +137,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         self.view.bringSubview(toFront: scoreLabel)
+        self.view.bringSubview(toFront: highScoreLabel)
     }
     
     func update(tm: Timer) {
@@ -230,6 +243,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // ゲームオーバー判定
         if(charactor.imageView.center.y > self.view.bounds.height + (2*charactor.imageHeight)){
+            
+            // ハイスコア登録
+            let ud = UserDefaults.standard;
+            if(highScore < score){
+                ud.set(String(score), forKey:"highScore");
+            }
+            ud.synchronize();
+            
             // 画面遷移
             self.performSegue(withIdentifier: "toResult", sender: nil);
         }

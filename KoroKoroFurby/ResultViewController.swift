@@ -13,12 +13,17 @@ class ResultViewController: UIViewController {
     var score: Int64 = 0;
     
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var highScoreLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         scoreLabel.text = "score : " + String(score);
+        
+        let ud = UserDefaults.standard;
+        let highScore = ud.string(forKey: "highScore")!;
+        highScoreLabel.text = "highscore : " + highScore;
     }
 
     override func didReceiveMemoryWarning() {
