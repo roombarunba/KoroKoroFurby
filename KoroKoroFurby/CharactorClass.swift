@@ -28,6 +28,7 @@ class CharactorClass: NSObject {
     var jumpBool: Bool = false;
     
     func initCharactor(){
+        // 初期化
         imageView = UIImageView(image:charactor);
         
         imageWidth = charactor.size.width/CGFloat(5);
