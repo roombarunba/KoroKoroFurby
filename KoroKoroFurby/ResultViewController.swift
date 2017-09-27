@@ -19,8 +19,10 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        // 現在のスコア表示
         scoreLabel.text = "score : " + String(score);
         
+        // ハイスコア表示
         let ud = UserDefaults.standard;
         let highScore = ud.string(forKey: "highScore")!;
         highScoreLabel.text = "highscore : " + highScore;
@@ -31,6 +33,7 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // リトライ処理
     @IBAction func retry(){
         self.dismiss(animated: true, completion: nil);
     }

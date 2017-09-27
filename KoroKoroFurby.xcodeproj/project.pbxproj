@@ -18,13 +18,7 @@
 		AB65EDE41F62932D00137CE9 /* 151-free-pictogramiro.png in Resources */ = {isa = PBXBuildFile; fileRef = AB65EDE31F62932D00137CE9 /* 151-free-pictogramiro.png */; };
 		AB65EDE81F62A23700137CE9 /* CharactorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE71F62A23700137CE9 /* CharactorClass.swift */; };
 		AB65EDEA1F62A56B00137CE9 /* AshibaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */; };
-		AB69AF301F67D7DA007C4F1F /* AshibaClass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF2F1F67D7DA007C4F1F /* AshibaClass2.swift */; };
-		AB69AF321F67E86D007C4F1F /* AshibaClass1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF311F67E86D007C4F1F /* AshibaClass1.swift */; };
-		AB69AF341F67E873007C4F1F /* AshibaClass3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF331F67E873007C4F1F /* AshibaClass3.swift */; };
-		AB69AF361F67E877007C4F1F /* AshibaClass4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF351F67E877007C4F1F /* AshibaClass4.swift */; };
-		AB69AF381F67E87D007C4F1F /* AshibaClass5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF371F67E87D007C4F1F /* AshibaClass5.swift */; };
 		AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF391F67E911007C4F1F /* AshibaMatome.swift */; };
-		AB69AF3C1F67FA20007C4F1F /* AshibaClassCCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF3B1F67FA20007C4F1F /* AshibaClassCCC.swift */; };
 		ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +37,7 @@
 		AB65EDE31F62932D00137CE9 /* 151-free-pictogramiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "151-free-pictogramiro.png"; sourceTree = "<group>"; };
 		AB65EDE71F62A23700137CE9 /* CharactorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactorClass.swift; sourceTree = "<group>"; };
 		AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF2F1F67D7DA007C4F1F /* AshibaClass2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass2.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF311F67E86D007C4F1F /* AshibaClass1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass1.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF331F67E873007C4F1F /* AshibaClass3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass3.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF351F67E877007C4F1F /* AshibaClass4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass4.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF371F67E87D007C4F1F /* AshibaClass5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass5.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AB69AF391F67E911007C4F1F /* AshibaMatome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaMatome.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		AB69AF3B1F67FA20007C4F1F /* AshibaClassCCC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AshibaClassCCC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +79,7 @@
 				AB389B7E1F4D518400B74119 /* Info.plist */,
 				AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */,
 				AB65EDE71F62A23700137CE9 /* CharactorClass.swift */,
-				AB69AF311F67E86D007C4F1F /* AshibaClass1.swift */,
-				AB69AF2F1F67D7DA007C4F1F /* AshibaClass2.swift */,
-				AB69AF331F67E873007C4F1F /* AshibaClass3.swift */,
-				AB69AF351F67E877007C4F1F /* AshibaClass4.swift */,
-				AB69AF371F67E87D007C4F1F /* AshibaClass5.swift */,
 				AB69AF391F67E911007C4F1F /* AshibaMatome.swift */,
-				AB69AF3B1F67FA20007C4F1F /* AshibaClassCCC.swift */,
 				AB5315621F71081E007EB184 /* ResultViewController.swift */,
 				AB4F11131F73B3C20048F781 /* TitleViewController.swift */,
 			);
@@ -189,17 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB69AF321F67E86D007C4F1F /* AshibaClass1.swift in Sources */,
 				AB65EDE81F62A23700137CE9 /* CharactorClass.swift in Sources */,
-				AB69AF341F67E873007C4F1F /* AshibaClass3.swift in Sources */,
-				AB69AF301F67D7DA007C4F1F /* AshibaClass2.swift in Sources */,
 				AB65EDEA1F62A56B00137CE9 /* AshibaClass.swift in Sources */,
 				AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */,
-				AB69AF381F67E87D007C4F1F /* AshibaClass5.swift in Sources */,
 				AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */,
 				ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */,
-				AB69AF3C1F67FA20007C4F1F /* AshibaClassCCC.swift in Sources */,
-				AB69AF361F67E877007C4F1F /* AshibaClass4.swift in Sources */,
 				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,
 				AB4F11141F73B3C20048F781 /* TitleViewController.swift in Sources */,
 			);

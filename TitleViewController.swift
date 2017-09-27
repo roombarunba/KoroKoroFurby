@@ -23,10 +23,12 @@ class TitleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // ゲーム画面へ
     @IBAction func start(){
         self.performSegue(withIdentifier: "toGame", sender: nil);
     }
     
+    // デバック用ハイスコアリセットボタン
     @IBAction func scoreReset(){
         let ud = UserDefaults.standard;
         ud.set("0", forKey: "highScore");
