@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8167AB7CB182B08E6FB8198B /* Pods_KoroKoroFurby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8E6D03F063AF6886B91E86 /* Pods_KoroKoroFurby.framework */; };
 		AB04128F1F5FE4B3003F2E7E /* 151-free-pictogram.png in Resources */ = {isa = PBXBuildFile; fileRef = AB04128E1F5FE4B3003F2E7E /* 151-free-pictogram.png */; };
 		AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B721F4D518400B74119 /* AppDelegate.swift */; };
 		AB389B781F4D518400B74119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB389B761F4D518400B74119 /* Main.storyboard */; };
@@ -19,10 +20,14 @@
 		AB65EDE81F62A23700137CE9 /* CharactorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE71F62A23700137CE9 /* CharactorClass.swift */; };
 		AB65EDEA1F62A56B00137CE9 /* AshibaClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */; };
 		AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69AF391F67E911007C4F1F /* AshibaMatome.swift */; };
+		AB9D0EF21F7B83CE004CE266 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0EF11F7B83CE004CE266 /* Key.swift */; };
+		AB9D0EFD1F7B912D004CE266 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0EFB1F7B912D004CE266 /* PopupViewController.swift */; };
+		AB9D0EFE1F7B912D004CE266 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9D0EFC1F7B912D004CE266 /* PopupViewController.xib */; };
 		ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		956681BC0644957E868B5F7B /* Pods-KoroKoroFurby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoroKoroFurby.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby.release.xcconfig"; sourceTree = "<group>"; };
 		AB04128E1F5FE4B3003F2E7E /* 151-free-pictogram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "151-free-pictogram.png"; sourceTree = "<group>"; };
 		AB389B6F1F4D518400B74119 /* KoroKoroFurby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoroKoroFurby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB389B721F4D518400B74119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,11 @@
 		AB65EDE71F62A23700137CE9 /* CharactorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactorClass.swift; sourceTree = "<group>"; };
 		AB65EDE91F62A56B00137CE9 /* AshibaClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AB69AF391F67E911007C4F1F /* AshibaMatome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AshibaMatome.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AB9D0EF11F7B83CE004CE266 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		AB9D0EFB1F7B912D004CE266 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		AB9D0EFC1F7B912D004CE266 /* PopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		ED8E6D03F063AF6886B91E86 /* Pods_KoroKoroFurby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoroKoroFurby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3ADEFE98A081798D6EA11BE /* Pods-KoroKoroFurby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoroKoroFurby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8167AB7CB182B08E6FB8198B /* Pods_KoroKoroFurby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2D592C14DB704BC9E49400 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED8E6D03F063AF6886B91E86 /* Pods_KoroKoroFurby.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB389B661F4D518400B74119 = {
 			isa = PBXGroup;
 			children = (
 				AB389B711F4D518400B74119 /* KoroKoroFurby */,
 				AB389B701F4D518400B74119 /* Products */,
+				E5E66A8A4B3791A16EFFC9F3 /* Pods */,
+				2C2D592C14DB704BC9E49400 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +93,8 @@
 			children = (
 				AB389B841F4D5A0600B74119 /* Images */,
 				AB389B721F4D518400B74119 /* AppDelegate.swift */,
+				AB9D0EFB1F7B912D004CE266 /* PopupViewController.swift */,
+				AB9D0EFC1F7B912D004CE266 /* PopupViewController.xib */,
 				AB389B741F4D518400B74119 /* ViewController.swift */,
 				AB389B761F4D518400B74119 /* Main.storyboard */,
 				AB389B791F4D518400B74119 /* Assets.xcassets */,
@@ -82,6 +105,7 @@
 				AB69AF391F67E911007C4F1F /* AshibaMatome.swift */,
 				AB5315621F71081E007EB184 /* ResultViewController.swift */,
 				AB4F11131F73B3C20048F781 /* TitleViewController.swift */,
+				AB9D0EF11F7B83CE004CE266 /* Key.swift */,
 			);
 			path = KoroKoroFurby;
 			sourceTree = "<group>";
@@ -96,6 +120,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		E5E66A8A4B3791A16EFFC9F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3ADEFE98A081798D6EA11BE /* Pods-KoroKoroFurby.debug.xcconfig */,
+				956681BC0644957E868B5F7B /* Pods-KoroKoroFurby.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB389B811F4D518400B74119 /* Build configuration list for PBXNativeTarget "KoroKoroFurby" */;
 			buildPhases = (
+				41090E2B0C75D3B8A07A9E43 /* [CP] Check Pods Manifest.lock */,
 				AB389B6B1F4D518400B74119 /* Sources */,
 				AB389B6C1F4D518400B74119 /* Frameworks */,
 				AB389B6D1F4D518400B74119 /* Resources */,
+				24F62F86860BEA26D719D8BD /* [CP] Embed Pods Frameworks */,
+				7E19D68199423923E04F6C9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,6 +194,7 @@
 				AB04128F1F5FE4B3003F2E7E /* 151-free-pictogram.png in Resources */,
 				AB389B7D1F4D518400B74119 /* LaunchScreen.storyboard in Resources */,
 				AB389B7A1F4D518400B74119 /* Assets.xcassets in Resources */,
+				AB9D0EFE1F7B912D004CE266 /* PopupViewController.xib in Resources */,
 				AB65EDE41F62932D00137CE9 /* 151-free-pictogramiro.png in Resources */,
 				AB389B781F4D518400B74119 /* Main.storyboard in Resources */,
 				AB389B861F4D5A1C00B74119 /* ashiba.jpg in Resources */,
@@ -165,6 +202,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24F62F86860BEA26D719D8BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41090E2B0C75D3B8A07A9E43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E19D68199423923E04F6C9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB389B6B1F4D518400B74119 /* Sources */ = {
@@ -176,6 +261,8 @@
 				AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */,
 				AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */,
 				ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */,
+				AB9D0EFD1F7B912D004CE266 /* PopupViewController.swift in Sources */,
+				AB9D0EF21F7B83CE004CE266 /* Key.swift in Sources */,
 				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,
 				AB4F11141F73B3C20048F781 /* TitleViewController.swift in Sources */,
 			);
@@ -300,6 +387,7 @@
 		};
 		AB389B821F4D518400B74119 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3ADEFE98A081798D6EA11BE /* Pods-KoroKoroFurby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KoroKoroFurby/Info.plist;
@@ -312,6 +400,7 @@
 		};
 		AB389B831F4D518400B74119 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 956681BC0644957E868B5F7B /* Pods-KoroKoroFurby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KoroKoroFurby/Info.plist;
