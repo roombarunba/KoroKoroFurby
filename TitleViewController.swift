@@ -35,6 +35,10 @@ class TitleViewController: UIViewController {
         ud.synchronize();
     }
     
+    @IBAction func ranking(){
+        self.performSegue(withIdentifier: "toRankingKari", sender: nil);
+    }
+    
 
     /*
     // MARK: - Navigation

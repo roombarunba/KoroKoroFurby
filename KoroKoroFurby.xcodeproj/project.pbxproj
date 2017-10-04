@@ -23,6 +23,8 @@
 		AB9D0EF21F7B83CE004CE266 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0EF11F7B83CE004CE266 /* Key.swift */; };
 		AB9D0EFD1F7B912D004CE266 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D0EFB1F7B912D004CE266 /* PopupViewController.swift */; };
 		AB9D0EFE1F7B912D004CE266 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9D0EFC1F7B912D004CE266 /* PopupViewController.xib */; };
+		AB9E1A9C1F84AD4100D1E5F0 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9E1A9B1F84AD4100D1E5F0 /* RankingViewController.swift */; };
+		AB9E1A9E1F84B7B900D1E5F0 /* RankingKariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9E1A9D1F84B7B900D1E5F0 /* RankingKariViewController.swift */; };
 		ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		AB9D0EF11F7B83CE004CE266 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		AB9D0EFB1F7B912D004CE266 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		AB9D0EFC1F7B912D004CE266 /* PopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		AB9E1A9B1F84AD4100D1E5F0 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		AB9E1A9D1F84B7B900D1E5F0 /* RankingKariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingKariViewController.swift; sourceTree = "<group>"; };
 		ED8E6D03F063AF6886B91E86 /* Pods_KoroKoroFurby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoroKoroFurby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ADEFE98A081798D6EA11BE /* Pods-KoroKoroFurby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoroKoroFurby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,8 @@
 				AB5315621F71081E007EB184 /* ResultViewController.swift */,
 				AB4F11131F73B3C20048F781 /* TitleViewController.swift */,
 				AB9D0EF11F7B83CE004CE266 /* Key.swift */,
+				AB9E1A9B1F84AD4100D1E5F0 /* RankingViewController.swift */,
+				AB9E1A9D1F84B7B900D1E5F0 /* RankingKariViewController.swift */,
 			);
 			path = KoroKoroFurby;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				AB69AF3A1F67E911007C4F1F /* AshibaMatome.swift in Sources */,
 				AB389B731F4D518400B74119 /* AppDelegate.swift in Sources */,
 				ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */,
+				AB9E1A9C1F84AD4100D1E5F0 /* RankingViewController.swift in Sources */,
+				AB9E1A9E1F84B7B900D1E5F0 /* RankingKariViewController.swift in Sources */,
 				AB9D0EFD1F7B912D004CE266 /* PopupViewController.swift in Sources */,
 				AB9D0EF21F7B83CE004CE266 /* Key.swift in Sources */,
 				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,

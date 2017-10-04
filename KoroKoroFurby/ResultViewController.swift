@@ -103,6 +103,10 @@ class ResultViewController: UIViewController {
         }
     }
     
+    @IBAction func ranking(){
+        self.performSegue(withIdentifier: "toRankingKariFromResult", sender: nil);
+    }
+    
 
     /*
     // MARK: - Navigation
