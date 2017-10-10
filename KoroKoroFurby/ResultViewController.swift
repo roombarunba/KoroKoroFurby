@@ -24,12 +24,12 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // 現在のスコア表示
-        scoreLabel.text = "score : " + String(score);
+        scoreLabel.text = "すこあ : " + String(score);
         
         // ハイスコア表示
         let ud = UserDefaults.standard;
         let highScore = ud.string(forKey: "highScore")!;
-        highScoreLabel.text = "highscore : " + highScore;
+        highScoreLabel.text = "はいすこあ : " + highScore;
         
     }
 
@@ -45,7 +45,7 @@ class ResultViewController: UIViewController {
     
     @IBAction func sendScore(){
         
-        let finishButton = DefaultButton(title: "OK"){
+        let finishButton = DefaultButton(title: "終"){
             
         };
         
@@ -61,7 +61,7 @@ class ResultViewController: UIViewController {
             let popup = PopupDialog(viewController: vc)
             
             // OKボタンを作る
-            let buttonOK = DefaultButton(title: "OK") {
+            let buttonOK = DefaultButton(title: "送る") {
                 
                 if(vc.textField.text != "" && vc.textField.text != nil){
                     let ud = UserDefaults.standard;
@@ -77,7 +77,7 @@ class ResultViewController: UIViewController {
                             self.present(failedPop, animated: true, completion: nil);
                         }else{
                             self.sendBool = true;
-                            let successPop = PopupDialog(title: "送信成功", message: "ありがとう");
+                            let successPop = PopupDialog(title: "送信成功", message: "＼飛猫屋／");
                             successPop.addButton(finishButton);
                             self.present(successPop, animated: true, completion: nil);
                         }
@@ -89,7 +89,7 @@ class ResultViewController: UIViewController {
                 }
             }
             
-            let buttonCancel = DefaultButton(title: "Cancel") {
+            let buttonCancel = DefaultButton(title: "終") {
                 
             }
             buttonCancel.titleColor = UIColor.red;

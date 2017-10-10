@@ -46,6 +46,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var highScore: Int64 = 0;
     @IBOutlet var highScoreLabel: UILabel!;
     
+    let charactorL = UIImage(named:"neko.png")!
+    let charactorR = UIImage(named:"neko_r.png")!
+    
+    @IBOutlet var background: UIImageView!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +90,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }else{
             highScore = 0;
         }
-        highScoreLabel.text = "HighScore : " + String(highScore);
+        highScoreLabel.text = "はいすこあ : " + String(highScore);
         
         maxHeight = Int64(self.view.bounds.height);
         
@@ -178,37 +183,72 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         
         for ashiba in ashibaArray{
-            if( // 足場の上部周辺にいる判定
+            if(charactor.imageView.isEqual(charactorR)){
+                if( // 足場の上部周辺にいる判定
                     (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) <= 35
-                
-                    &&
                         
-                    (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 15
-                
-                    &&
-                
-                    // 足場より右側にいる判定
-                    charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
-                    > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
+                        &&
+                        
+                        (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 15
+                        
+                        &&
+                        
+                        // 足場より右側にいる判定
+                        charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx - CGFloat(15)
+                        > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
+                        
+                        &&
+                        
+                        // 足場より左側にいる判定
+                        charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
+                        < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+                        
+                        
+                        &&
+                        
+                        // 落下中判定
+                        charactor.vy >= 0
                     
-                    &&
+                    ){
                     
-                    // 足場より左側にいる判定
-                    charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx
-                    < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+                    // ジャンプする
+                    charactor.vy = -15;
+                    charactor.hoppedCount = 0;
                     
+                }
+            }else{
+                if( // 足場の上部周辺にいる判定
+                    (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) <= 35
+                        
+                        &&
+                        
+                        (charactor.imageView.center.y + charactor.imageHeightHalf + charactor.vy) - (ashiba.ashibaView.center.y - ashiba.heightHalf) > 15
+                        
+                        &&
+                        
+                        // 足場より右側にいる判定
+                        charactor.imageView.center.x + charactor.imageWidthHalf + charactor.vx
+                        > ashiba.ashibaView.center.x - ashiba.widthHalf + 2
+                        
+                        &&
+                        
+                        // 足場より左側にいる判定
+                        charactor.imageView.center.x - charactor.imageWidthHalf + charactor.vx + CGFloat(15)
+                        < ashiba.ashibaView.center.x + ashiba.widthHalf - 2
+                        
+                        
+                        &&
+                        
+                        // 落下中判定
+                        charactor.vy >= 0
                     
-                    &&
+                    ){
                     
-                    // 落下中判定
-                    charactor.vy >= 0
-                
-                ){
-                
-                // ジャンプする
-                charactor.vy = -15;
-                charactor.hoppedCount = 0;
-                
+                    // ジャンプする
+                    charactor.vy = -15;
+                    charactor.hoppedCount = 0;
+                    
+                }
             }
         }
         
@@ -256,7 +296,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             score = score + Int64(-1 * charactor.vy);
             maxHeight = Int64(charactor.imageView.center.y);
         }
-        scoreLabel.text = "score : " + String(score);
+        scoreLabel.text = "すこあ : " + String(score);
         
         // ゲームオーバー判定
         if(charactor.imageView.center.y > self.view.bounds.height + (2*charactor.imageHeight)){
@@ -287,10 +327,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         if(x < Int(self.view.bounds.width/2)){
             if(charactor.vx > -5){
                 charactor.vx += -0.3;
+                if(charactor.vx <= 0){
+                    let x = charactor.imageView.center.x;
+                    let y = charactor.imageView.center.y;
+                    charactor.imageView.removeFromSuperview();
+                    charactor.imageView = UIImageView(image:charactorL);
+                    let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
+                    charactor.imageView.frame = rect;
+                    charactor.imageView.center = CGPoint(x:x, y:y);
+                    self.view.addSubview(charactor.imageView);
+                    self.view.sendSubview(toBack: charactor.imageView);
+                    self.view.sendSubview(toBack: background);
+                }
+
             }
         }else{
             if(charactor.vx < 5){
                 charactor.vx += 0.3;
+                if(charactor.vx >= 0){
+                    let x = charactor.imageView.center.x;
+                    let y = charactor.imageView.center.y;
+                    charactor.imageView.removeFromSuperview();
+                    charactor.imageView = UIImageView(image:charactorR);
+                    let rect = CGRect(x:0, y:0, width:charactor.imageWidth, height:charactor.imageHeight)
+                    charactor.imageView.frame = rect;
+                    charactor.imageView.center = CGPoint(x:x, y:y);
+                    self.view.addSubview(charactor.imageView);
+                    self.view.sendSubview(toBack: charactor.imageView);
+                    self.view.sendSubview(toBack: background);
+                }
             }
         }
     }

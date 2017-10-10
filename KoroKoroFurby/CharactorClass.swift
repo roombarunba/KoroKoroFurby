@@ -10,7 +10,7 @@ import UIKit
 
 class CharactorClass: NSObject {
     
-    let charactor = UIImage(named:"151-free-pictogramiro.png")!
+    let charactor = UIImage(named:"neko.png")!
     var imageView:UIImageView!
     
     var vy: CGFloat = 0;
@@ -31,8 +31,8 @@ class CharactorClass: NSObject {
         // 初期化
         imageView = UIImageView(image:charactor);
         
-        imageWidth = charactor.size.width/CGFloat(5);
-        imageHeight = charactor.size.height/CGFloat(5);
+        imageWidth = charactor.size.width*38/CGFloat(100);
+        imageHeight = charactor.size.height*38/CGFloat(100);
         
         imageWidthHalf = imageWidth/CGFloat(2);
         imageHeightHalf = imageHeight/CGFloat(2);

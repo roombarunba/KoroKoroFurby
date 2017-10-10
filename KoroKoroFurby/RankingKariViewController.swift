@@ -50,6 +50,7 @@ class RankingKariViewController: UIViewController {
                           labelNumber6,labelNumber7,labelNumber8,labelNumber9,labelNumber10,]
         var scoreArray = [labelScore1, labelScore2, labelScore3, labelScore4, labelScore5,
                           labelScore6, labelScore7, labelScore8, labelScore9, labelScore10];
+        var kanzi = ["壱", "弐", "参", "肆", "伍", "陸", "漆", "捌", "玖", "拾"]
         let query = NCMBQuery(className: "Ranking")
         query?.order(byDescending: "Score");
         query?.limit = 10;
@@ -68,7 +69,7 @@ class RankingKariViewController: UIViewController {
                     var s: String;
                     let num = data.object(forKey: "Score")!;
                     let num_s = String(describing: num);
-                    s = String(i+1) + "位:" + String(data.object(forKey: "Name")! as! String);
+                    s = kanzi[i] + ":" + String(data.object(forKey: "Name")! as! String);
                     labelArray[i]?.text = s;
                     scoreArray[i]?.text = num_s;
                     i = i + 1;

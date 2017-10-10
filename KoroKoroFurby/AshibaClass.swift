@@ -10,7 +10,7 @@ import UIKit
 
 class AshibaClass {
     
-    let ashiba = UIImage(named:"ashiba.jpg")!
+    let ashiba = UIImage(named:"ashi.png")!
     var ashibaView:UIImageView!
     
     var widthHalf: CGFloat = 0;
