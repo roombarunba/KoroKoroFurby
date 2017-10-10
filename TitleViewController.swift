@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class TitleViewController: UIViewController {
     
@@ -37,6 +38,19 @@ class TitleViewController: UIViewController {
     
     @IBAction func ranking(){
         self.performSegue(withIdentifier: "toRankingKari", sender: nil);
+    }
+    
+    @IBAction func exp(){
+        let popup = PopupDialog(title: "せつめい", message: "画面左半分を長押しで左に飛び六方\n\n画面右半分を長押しで右に飛び六方\n\nいかに飛び六方といえども慣性が飛び六方\n\n高みを目指して飛び六方！")
+        
+        let finishButton = DefaultButton(title: "終"){
+            
+        };
+        
+        popup.addButton(finishButton);
+        
+        // 作成したポップアップを表示する
+        present(popup, animated: true, completion: nil)
     }
     
 

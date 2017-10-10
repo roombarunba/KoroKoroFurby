@@ -56,6 +56,17 @@
                                     <action selector="start" destination="gKP-68-ZCu" eventType="touchUpInside" id="5Fr-3R-wcM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQb-YW-HPG">
+                                <rect key="frame" x="64" y="575" width="246" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="32"/>
+                                <state key="normal" title="あそびかた" backgroundImage="botan2.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exp" destination="gKP-68-ZCu" eventType="touchDragInside" id="A3n-Ce-QD0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -99,6 +110,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="yQm-CY-zLv">
+                                <rect key="frame" x="0.0" y="660" width="375" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -106,6 +121,7 @@
                         <outlet property="background" destination="afQ-xW-89D" id="mTD-zb-5Dp"/>
                         <outlet property="highScoreLabel" destination="qYQ-MK-pGR" id="WQn-pH-fmq"/>
                         <outlet property="scoreLabel" destination="Nfb-PW-F6H" id="kVe-se-mF6"/>
+                        <outlet property="syoki" destination="yQm-CY-zLv" id="s0J-lM-qKl"/>
                         <segue destination="a9s-5N-CEG" kind="presentation" identifier="toResult" id="9rO-z3-5DT"/>
                     </connections>
                 </viewController>
@@ -472,6 +488,7 @@
     <resources>
         <image name="310204.png" width="1600" height="1200"/>
         <image name="436670.png" width="1617" height="1211"/>
+        <image name="ashi.png" width="51" height="51"/>
         <image name="botan.png" width="1200" height="226"/>
         <image name="botan2.png" width="1200" height="289"/>
         <image name="title.png" width="1600" height="800"/>

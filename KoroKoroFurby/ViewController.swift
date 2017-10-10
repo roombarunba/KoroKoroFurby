@@ -51,6 +51,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var background: UIImageView!;
     
+    @IBOutlet var syoki: UIImageView!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -146,6 +148,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             bCy = ashiba.initCy;
             self.view.addSubview(ashiba.ashibaView);
         }
+        
+        self.view.addSubview(syoki);
         
         // スコアを他のviewより手前に
         self.view.bringSubview(toFront: scoreLabel)
@@ -256,6 +260,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         if(charactor.imageView.center.y + charactor.vy < view.self.bounds.height/3){
             // 地面判定を消す
             ground = false;
+            syoki.removeFromSuperview();
             
             // スコア増加
             score = score + Int64(-1 * charactor.vy);
