@@ -17,14 +17,14 @@ class WebViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let favoriteURL = NSURL(string: "http://blog.goo.ne.jp/hoppingroppo/e/cc628f123a4e3dd1ef0dd62a386aa0c1")
-        // stringにはお好きなurlを入れてください。
-        
-        let urlRequest = NSURLRequest(url: favoriteURL as! URL)
-        // urlをネットワーク接続が可能な状態にしている（らしい）
-        
-        webView.loadRequest(urlRequest as URLRequest)
-        // 実際にwebViewにurlからwebページを引っ張ってくる。
+//        let favoriteURL = NSURL(string: "http://blog.goo.ne.jp/hoppingroppo/e/cc628f123a4e3dd1ef0dd62a386aa0c1")
+//        // stringにはお好きなurlを入れてください。
+//        
+//        let urlRequest = NSURLRequest(url: favoriteURL as! URL)
+//        // urlをネットワーク接続が可能な状態にしている（らしい）
+//        
+//        webView.loadRequest(urlRequest as URLRequest)
+//        // 実際にwebViewにurlからwebページを引っ張ってくる。
     }
 
     override func didReceiveMemoryWarning() {

@@ -145,19 +145,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmX-Sa-cdT">
-                                <rect key="frame" x="0.0" y="668.5" width="414" height="67.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="32"/>
-                                <state key="normal" title="もどる" backgroundImage="botan2.png">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="back" destination="8xh-qI-eBG" eventType="touchUpInside" id="XUd-Bh-B8m"/>
-                                    <action selector="back" destination="1Dr-BA-I1t" eventType="touchUpInside" id="c2L-fd-Tgm"/>
-                                    <action selector="ranking" destination="gKP-68-ZCu" eventType="touchUpInside" id="9no-Dm-J5g"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="壱:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvg-3a-hGs">
                                 <rect key="frame" x="17.5" y="107.5" width="180" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -332,6 +319,19 @@
                                     <action selector="web" destination="1Dr-BA-I1t" eventType="touchUpInside" id="8ui-nd-wM5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmX-Sa-cdT">
+                                <rect key="frame" x="0.0" y="668" width="414" height="67.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="32"/>
+                                <state key="normal" title="もどる" backgroundImage="botan2.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="8xh-qI-eBG" eventType="touchUpInside" id="XUd-Bh-B8m"/>
+                                    <action selector="back" destination="1Dr-BA-I1t" eventType="touchUpInside" id="c2L-fd-Tgm"/>
+                                    <action selector="ranking" destination="gKP-68-ZCu" eventType="touchUpInside" id="9no-Dm-J5g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -373,13 +373,12 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZbO-7i-uXc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-vt-PXm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="436670.png" translatesAutoresizingMaskIntoConstraints="NO" id="PuF-2x-OXu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGu-E0-gaD">
                                 <rect key="frame" x="0.0" y="668" width="414" height="67.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -391,12 +390,57 @@
                                     <action selector="back" destination="vSD-76-PQc" eventType="touchUpInside" id="NHt-uQ-mvr"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-Td-xGe">
+                                <rect key="frame" x="0.0" y="120" width="414" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C33-4x-iuv">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <mutableString key="text">個人情報の取り扱いについて
+
+当社のアプリケーションでは、オンラインランキング表示のため、お客様の個人情報を収集させていただくことがございます。
+
+当社は、お客様からご提供いただく個人情報を、適切に保護することが重要であると認識し、経済産業省「個人情報の保護に関する法律についてのガイドライン」に基き、以下のように個人情報保護方針を定めます。
+
+個人情報保護方針
+
+１．個人情報は適切に利用します
+
+個人情報を本人の意思に反して収集、利用することは、権利の侵害になると共に、事業者としての信頼を失うことになります。そのため、個人情報の収集、利用等のルールを明文化し、適切な取扱いを行います。また、法的な要請を除き、本人の許可なく第三者に情報を開示・提供することはありません。
+
+２．個人情報の厳正な管理を行います
+
+個人情報の紛失、破壊、改ざん、および漏えい等を防止するため、不正アクセス対策、ウイルス対策等の情報セキュリティ対策を行い、適切に管理いたします。また、不要になった個人情報はすみやかに廃棄いたします。
+
+３．法令およびその他の規範を遵守します
+
+個人情報の取り扱いに関して、個人情報保護法をはじめとする個人情報に関する法令およびその他の規範を遵守します。
+
+４．個人情報保護方針の継続的改善を行います
+
+ここで定めた個人情報保護方針は、定期的に見直しを行い、継続的な改善を行います。また、当社の個人情報保護方針とその運営に関して、疑問に思われる点や不都合な点等がありましたら、下記の問合わせ窓口までご連絡ください。当社で検討を行い、適切に改善を行います。
+
+本方針および当社の個人情報の取り扱いに関するお問合せ窓口
+
+電子メール: hoppingroppo@gmail.com
+
+ブログ：http://blog.goo.ne.jp/hoppingroppo</mutableString>
+                                        <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ぷらいばしーぽりしー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBO-5q-wjN">
+                                <rect key="frame" x="20" y="69" width="359" height="47.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="webView" destination="zHf-vt-PXm" id="sCl-VD-AVc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijd-up-WMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
