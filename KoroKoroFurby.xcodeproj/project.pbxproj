@@ -65,6 +65,7 @@
 		ABC1CFA91F8CB4DE00141D87 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC1CF8D1F8CB4DE00141D87 /* iTunesArtwork@2x.png */; };
 		ABC1CFAA1F8CB4DE00141D87 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC1CF8E1F8CB4DE00141D87 /* iTunesArtwork@3x.png */; };
 		ABC1CFAE1F8CB71800141D87 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = ABC1CFAD1F8CB71800141D87 /* README.md */; };
+		ABC697371F9A001F0097AFFD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC697361F9A001F0097AFFD /* WebViewController.swift */; };
 		ABDFD2C21F73C7F200348E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB389B741F4D518400B74119 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,7 @@
 		ABC1CF8D1F8CB4DE00141D87 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		ABC1CF8E1F8CB4DE00141D87 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		ABC1CFAD1F8CB71800141D87 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ABC697361F9A001F0097AFFD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ED8E6D03F063AF6886B91E86 /* Pods_KoroKoroFurby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KoroKoroFurby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3ADEFE98A081798D6EA11BE /* Pods-KoroKoroFurby.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoroKoroFurby.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KoroKoroFurby/Pods-KoroKoroFurby.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +196,7 @@
 				AB9D0EF11F7B83CE004CE266 /* Key.swift */,
 				AB9E1A9B1F84AD4100D1E5F0 /* RankingViewController.swift */,
 				AB9E1A9D1F84B7B900D1E5F0 /* RankingKariViewController.swift */,
+				ABC697361F9A001F0097AFFD /* WebViewController.swift */,
 			);
 			path = KoroKoroFurby;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				AB9D0EFD1F7B912D004CE266 /* PopupViewController.swift in Sources */,
 				AB9D0EF21F7B83CE004CE266 /* Key.swift in Sources */,
 				AB5315631F71081E007EB184 /* ResultViewController.swift in Sources */,
+				ABC697371F9A001F0097AFFD /* WebViewController.swift in Sources */,
 				AB4F11141F73B3C20048F781 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

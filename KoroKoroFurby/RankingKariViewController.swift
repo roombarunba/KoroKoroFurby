@@ -82,6 +82,10 @@ class RankingKariViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func web(){
+        self.performSegue(withIdentifier: "toWeb", sender: nil);
+    }
+    
     
     
 
