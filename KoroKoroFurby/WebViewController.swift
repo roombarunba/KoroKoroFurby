@@ -11,10 +11,15 @@ import UIKit
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
+    
+    @IBOutlet var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.textView.setContentOffset(CGPoint.zero, animated: false)
+        
+        
         // Do any additional setup after loading the view.
         
 //        let favoriteURL = NSURL(string: "http://blog.goo.ne.jp/hoppingroppo/e/cc628f123a4e3dd1ef0dd62a386aa0c1")

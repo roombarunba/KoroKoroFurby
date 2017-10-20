@@ -310,15 +310,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5u-fb-6Tj">
-                                <rect key="frame" x="100" y="630" width="215" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="16"/>
-                                <state key="normal" title="ぷらいばしーぽりしー"/>
-                                <connections>
-                                    <action selector="web" destination="1Dr-BA-I1t" eventType="touchUpInside" id="8ui-nd-wM5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmX-Sa-cdT">
                                 <rect key="frame" x="0.0" y="668" width="414" height="67.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -330,6 +321,15 @@
                                     <action selector="back" destination="8xh-qI-eBG" eventType="touchUpInside" id="XUd-Bh-B8m"/>
                                     <action selector="back" destination="1Dr-BA-I1t" eventType="touchUpInside" id="c2L-fd-Tgm"/>
                                     <action selector="ranking" destination="gKP-68-ZCu" eventType="touchUpInside" id="9no-Dm-J5g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5u-fb-6Tj">
+                                <rect key="frame" x="100" y="626" width="215" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="16"/>
+                                <state key="normal" title="ぷらいばしーぽりしー"/>
+                                <connections>
+                                    <action selector="web" destination="1Dr-BA-I1t" eventType="touchUpInside" id="8ui-nd-wM5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -390,14 +390,17 @@
                                     <action selector="back" destination="vSD-76-PQc" eventType="touchUpInside" id="NHt-uQ-mvr"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-Td-xGe">
-                                <rect key="frame" x="0.0" y="120" width="414" height="548"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ぷらいばしーぽりしー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBO-5q-wjN">
+                                <rect key="frame" x="20" y="69" width="359" height="47.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C33-4x-iuv">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">個人情報の取り扱いについて
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTF-xs-6Rz">
+                                <rect key="frame" x="0.0" y="117" width="414" height="552"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <mutableString key="text">個人情報の取り扱いについて
 
 当社のアプリケーションでは、オンラインランキング表示のため、お客様の個人情報を収集させていただくことがございます。
 
@@ -425,22 +428,17 @@
 
 電子メール: hoppingroppo@gmail.com
 
-ブログ：http://blog.goo.ne.jp/hoppingroppo</mutableString>
-                                        <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ぷらいばしーぽりしー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBO-5q-wjN">
-                                <rect key="frame" x="20" y="69" width="359" height="47.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+ブログ：http://blog.goo.ne.jp/hoppingroppo
+</mutableString>
+                                <fontDescription key="fontDescription" name="Mutsuki" family="Mutsuki" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="dTF-xs-6Rz" id="efn-wX-UeF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijd-up-WMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
